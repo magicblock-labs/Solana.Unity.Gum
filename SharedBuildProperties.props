@@ -1,19 +1,19 @@
 <Project DefaultTargets="Build"
          xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <Product>Solnet.Template</Product>
+        <Product>Solana.Unity.Gum</Product>
         <Version>0.0.1</Version>
-        <Copyright>Copyright 2021 &#169; blockmountain</Copyright>
-        <Authors>blockmountain</Authors>
-        <PublisherName>blockmountain</PublisherName>
-        <RepositoryUrl>https://github.com/bmresearch/Solnet.Template</RepositoryUrl>
+        <Copyright>Copyright 2023 &#169; gumhq</Copyright>
+        <Authors>gumhq</Authors>
+        <PublisherName>gumhq</PublisherName>
+        <RepositoryUrl>https://github.com/gumhq/Solana.Unity.Gum</RepositoryUrl>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <LangVersion>latest</LangVersion>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageIcon>icon.png</PackageIcon>
-        <PackageDescription>Solnet.Template is a .Net integration library for Template.</PackageDescription>
-        <PackageTags>solana;solnet;sol;net5</PackageTags>
-        <PackageReleaseNotes>https://github.com/bmresearch/Solnet.Template/releases</PackageReleaseNotes>
+        <PackageDescription>Solana.Unity.Gum is a .Net integration library for Template.</PackageDescription>
+        <PackageTags>solana;gum;unity;sol;net5</PackageTags>
+        <PackageReleaseNotes>https://github.com/gumhq/Solana.Unity.Gum/releases</PackageReleaseNotes>
         <RepositoryType>git</RepositoryType>
     </PropertyGroup>
 

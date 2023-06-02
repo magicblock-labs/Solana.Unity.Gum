@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Solnet.Template.Examples
+namespace Solana.Unity.Gum.Examples
 {
     public class ExampleExplorer
     {

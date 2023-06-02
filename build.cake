@@ -4,7 +4,7 @@
 
 var testProjectsRelativePaths = new string[]
 {
-    "./Solnet.Template.Test/Solnet.Template.Test.csproj",
+    "./Solana.Unity.Gum.Test/Solana.Unity.Gum.Test.csproj",
 };
 
 var target = Argument("target", "Pack");
@@ -42,11 +42,11 @@ Task("Build")
         });
     });
 
-    
+
 Task("Test")
     .IsDependentOn("Build")
     .Does(() => {
-    
+
         var coverletSettings = new CoverletSettings {
             CollectCoverage = true,
             CoverletOutputDirectory = coverageFolder,

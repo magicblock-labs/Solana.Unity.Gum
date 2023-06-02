@@ -1,4 +1,4 @@
-namespace Solnet.Template.Examples
+namespace Solana.Unity.Gum.Examples
 {
     /// <summary>
     /// Defines functionality for an example.

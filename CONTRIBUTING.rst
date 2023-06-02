@@ -1,15 +1,15 @@
 Introduction
 ============
 
-First off, thank you for considering contributing to Solnet. It's people like you that will make Solnet a great tool.
+First off, thank you for considering contributing to Solana.Unity.Gum. It's people like you that will make Solana.Unity.Gum a great tool.
 
 
 Support questions
 -----------------
 
 Please don't use the issue tracker for this. The issue tracker is a tool
-to address bugs and feature requests in Solnet itself. Use one of the
-following resources for questions about using Solnet or issues with your
+to address bugs and feature requests in Solana.Unity.Gum itself. Use one of the
+following resources for questions about using Solana.Unity.Gum or issues with your
 own code:
 
 -   The `discussions`_ page
@@ -17,7 +17,7 @@ own code:
 -   The email blockmountainresearch(at)protonmail.com can be used for longer term
     discussion or larger issues.
 
-.. _discussions: https://github.com/bmresearch/Solnet/discussions
+.. _discussions: https://github.com/gumhq/Solana.Unity.Gum/discussions
 
 Reporting issues
 ----------------
@@ -30,7 +30,7 @@ Include the following information in your post:
     your own code.
 -   Describe what actually happened. Include the full traceback if there
     was an exception.
--   List your .NET and Solnet versions. If possible, check if this
+-   List your .NET and Solana.Unity.Gum versions. If possible, check if this
     issue is already fixed in the latest releases or the latest code in
     the repository.
 
