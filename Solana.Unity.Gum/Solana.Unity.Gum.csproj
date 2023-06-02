@@ -27,5 +27,11 @@
     </ItemGroup>
 
 
+    <ItemGroup>
+      <None Remove="GPL Session Program\" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="GPL Session Program\" />
+    </ItemGroup>
     <Import Project="..\SharedBuildProperties.props" />
 </Project>
