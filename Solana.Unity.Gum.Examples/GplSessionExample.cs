@@ -25,16 +25,11 @@ namespace Solana.Unity.Gum.Examples
 
         private static IRpcClient rpcClient = Rpc.ClientFactory.GetClient(uri, logger: true);
 
-        private static void RequestAirdrop(PublicKey address, ulong lamports)
-        {
-            rpcClient.RequestAirdrop(address, lamports);
-        }
-
         public static void Main(string[] args)
         {
             Console.WriteLine("Running the example");
             Console.WriteLine("Wallet Publickey: " + wallet.Account.PublicKey.ToString());
-            RequestAirdrop(wallet.Account.PublicKey, LAMPORTS_PER_SOL * 1);
+            rpcClient.RequestAirdrop(wallet.Account.PublicKey, LAMPORTS_PER_SOL * 1);
 
             var balance = rpcClient.GetBalanceAsync(wallet.Account.PublicKey);
             Console.WriteLine("Balance: " + balance.Result);
@@ -44,7 +39,7 @@ namespace Solana.Unity.Gum.Examples
 
             var targetProgram = new PublicKey("6MhUAJtKdJx3RDCffUsJsQm8xy9YhhywjEmMYrxRc5j6");
 
-            RequestAirdrop(sessionSigner.Account.PublicKey, LAMPORTS_PER_SOL * 1);
+            rpcClient.RequestAirdrop(sessionSigner.Account.PublicKey, LAMPORTS_PER_SOL * 1);
 
             CreateSessionAccounts createSessionAccounts = new CreateSessionAccounts();
 
