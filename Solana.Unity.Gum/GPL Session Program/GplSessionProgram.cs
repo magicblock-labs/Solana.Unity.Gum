@@ -5,28 +5,61 @@ using Solana.Unity.Wallet;
 namespace Solana.Unity.Gum.GplSession
 {
     namespace Program {
+        /// <summary>
+        /// Provides the accounts required to create a GPL session.
+        /// </summary>
         public class CreateSessionAccounts
         {
+            /// <summary>
+            /// The session token account.
+            /// </summary>
             public PublicKey SessionToken { get; set; }
 
+            /// <summary>
+            /// The session signer account.
+            /// </summary>
             public PublicKey SessionSigner { get; set; }
 
+            /// <summary>
+            /// The authority account.
+            /// </summary>
             public PublicKey Authority { get; set; }
 
+            /// <summary>
+            /// The target program account.
+            /// </summary>
             public PublicKey TargetProgram { get; set; }
 
+            /// <summary>
+            /// The system program account.
+            /// </summary>
             public PublicKey SystemProgram { get; set; }
         }
 
+        /// <summary>
+        /// Provides the accounts required to revoke a GPL session.
+        /// </summary>
         public class RevokeSessionAccounts
         {
+            /// <summary>
+            /// The session token account.
+            /// </summary>
             public PublicKey SessionToken { get; set; }
 
+            /// <summary>
+            /// The authority account.
+            /// </summary>
             public PublicKey Authority { get; set; }
 
+            /// <summary>
+            /// The system program account.
+            /// </summary>
             public PublicKey SystemProgram { get; set; }
         }
 
+        /// <summary>
+        /// Provides functionality for creating and revoking GPL sessions.
+        /// </summary>
         public static class GplSessionProgram
         {
 
