@@ -15,13 +15,12 @@ namespace Solana.Unity.Gum.Examples
     {
         // Set up a test wallet
 
-        private static readonly string mnemonic = "embark hockey chaos soda pioneer dynamic acquire surprise urge egg leaf country"; 
+        private static readonly string mnemonic = "embark hockey chaos soda pioneer dynamic acquire surprise urge egg leaf country";
 
         private static readonly Wallet.Wallet wallet = new Wallet.Wallet(mnemonic);
 
         private const ulong LAMPORTS_PER_SOL = 1000000000;
 
-        // Set up a httpClient and connect to the devnet
         private const string uri = "http://localhost:8899";
 
         private static IRpcClient rpcClient = Rpc.ClientFactory.GetClient(uri, logger: true);
@@ -31,7 +30,8 @@ namespace Solana.Unity.Gum.Examples
             rpcClient.RequestAirdrop(address, lamports);
         }
 
-        public static void Main(string[] args) {
+        public static void Main(string[] args)
+        {
             Console.WriteLine("Running the example");
             Console.WriteLine("Wallet Publickey: " + wallet.Account.PublicKey.ToString());
             RequestAirdrop(wallet.Account.PublicKey, LAMPORTS_PER_SOL * 1);
@@ -39,7 +39,7 @@ namespace Solana.Unity.Gum.Examples
             var balance = rpcClient.GetBalanceAsync(wallet.Account.PublicKey);
             Console.WriteLine("Balance: " + balance.Result);
 
-            
+
             var sessionSigner = new Wallet.Wallet(WordCount.Twelve, WordList.English);
 
             var targetProgram = new PublicKey("6MhUAJtKdJx3RDCffUsJsQm8xy9YhhywjEmMYrxRc5j6");
@@ -49,7 +49,7 @@ namespace Solana.Unity.Gum.Examples
             CreateSessionAccounts createSessionAccounts = new CreateSessionAccounts();
 
             // Create PDA for session token
-            createSessionAccounts.SessionToken = SessionToken.DeriveSessionTokenAccount(authority: wallet.Account.PublicKey, targetProgram: targetProgram, sessionSigner: sessionSigner.Account.PublicKey );
+            createSessionAccounts.SessionToken = SessionToken.DeriveSessionTokenAccount(authority: wallet.Account.PublicKey, targetProgram: targetProgram, sessionSigner: sessionSigner.Account.PublicKey);
             createSessionAccounts.SessionSigner = sessionSigner.Account.PublicKey;
             createSessionAccounts.Authority = wallet.Account.PublicKey;
             createSessionAccounts.TargetProgram = targetProgram;
@@ -80,6 +80,6 @@ namespace Solana.Unity.Gum.Examples
             var sessionTokenData = rpcClient.GetAccountInfo(createSessionAccounts.SessionToken);
             var sessionToken = SessionToken.Deserialize(Convert.FromBase64String(sessionTokenData.Result.Value.Data[0]));
             Console.WriteLine("Session Token : " + sessionToken.ValidUntil.ToString());
+        }
     }
-}
 }
