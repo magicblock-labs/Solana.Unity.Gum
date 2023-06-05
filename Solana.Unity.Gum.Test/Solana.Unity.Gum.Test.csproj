@@ -25,4 +25,10 @@
         <ProjectReference Include="..\Solana.Unity.Gum\Solana.Unity.Gum.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="TestResults\" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="TestResults\" />
+    </ItemGroup>
 </Project>
