@@ -29,8 +29,24 @@ namespace Solana.Unity.Gum.GplSession
 
         public static class GplSessionProgram
         {
-            public static Solana.Unity.Rpc.Models.TransactionInstruction CreateSession(CreateSessionAccounts accounts, bool? topUp, long? validUntil, PublicKey programId)
+
+            /// <summary>
+            /// The public key of the GPL Session program.
+            /// </summary>
+            public static readonly PublicKey ProgramIdKey = new PublicKey("3ao63wcSRNa76bncC2M3KupNtXBFiDyNbgK52VG7dLaE");
+            /// <summary>
+            /// Creates a new session account.
+            /// </summary>
+            /// <param name="accounts">The accounts used to create the session.</param>
+            /// <param name="topUp">Whether to top up the session account.</param>
+            /// <param name="validUntil">The time until the session is valid.</param>
+            /// <param name="programId">The program ID of the session program.</param>
+            /// <returns>A transaction instruction to create the session account.</returns>
+            public static Solana.Unity.Rpc.Models.TransactionInstruction CreateSession(CreateSessionAccounts accounts, bool? topUp = null, long? validUntil = null, PublicKey programId = null!)
+
             {
+                programId ??= ProgramIdKey;
+
                 List<Solana.Unity.Rpc.Models.AccountMeta> keys = new()
                 {Solana.Unity.Rpc.Models.AccountMeta.Writable(accounts.SessionToken, false), Solana.Unity.Rpc.Models.AccountMeta.Writable(accounts.SessionSigner, true), Solana.Unity.Rpc.Models.AccountMeta.Writable(accounts.Authority, true), Solana.Unity.Rpc.Models.AccountMeta.ReadOnly(accounts.TargetProgram, false), Solana.Unity.Rpc.Models.AccountMeta.ReadOnly(accounts.SystemProgram, false)};
                 byte[] _data = new byte[1200];
@@ -68,10 +84,22 @@ namespace Solana.Unity.Gum.GplSession
                 return new Solana.Unity.Rpc.Models.TransactionInstruction { Keys = keys, ProgramId = programId.KeyBytes, Data = resultData };
             }
 
-            public static Solana.Unity.Rpc.Models.TransactionInstruction RevokeSession(RevokeSessionAccounts accounts, PublicKey programId)
+            /// <summary>
+            /// Revokes a session account.
+            /// </summary>
+            /// <param name="accounts">The accounts used to revoke the session.</param>
+            /// <param name="programId">The program ID of the session program.</param>
+            /// <returns>A transaction instruction to revoke the session account.</returns>
+            public static Solana.Unity.Rpc.Models.TransactionInstruction RevokeSession(RevokeSessionAccounts accounts, PublicKey programId = null!)
             {
+                programId ??= ProgramIdKey;
+
                 List<Solana.Unity.Rpc.Models.AccountMeta> keys = new()
-                {Solana.Unity.Rpc.Models.AccountMeta.Writable(accounts.SessionToken, false), Solana.Unity.Rpc.Models.AccountMeta.Writable(accounts.Authority, false), Solana.Unity.Rpc.Models.AccountMeta.ReadOnly(accounts.SystemProgram, false)};
+                {
+                    Solana.Unity.Rpc.Models.AccountMeta.Writable(accounts.SessionToken, false),
+                    Solana.Unity.Rpc.Models.AccountMeta.Writable(accounts.Authority, false),
+                    Solana.Unity.Rpc.Models.AccountMeta.ReadOnly(accounts.SystemProgram, false)
+                };
                 byte[] _data = new byte[1200];
                 int offset = 0;
                 _data.WriteU64(13981146387719806038UL, offset);
