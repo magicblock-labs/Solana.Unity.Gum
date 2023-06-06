@@ -4,7 +4,7 @@
         <Description>
             Solana.Unity.Gum implements functionality to integrate Template project into .Net applications.
         </Description>
-        <TargetFramework>net6.0</TargetFramework>
+        <TargetFramework>netstandard2.1</TargetFramework>
 
         <IsPackable>false</IsPackable>
 
