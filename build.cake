@@ -1,3 +1,6 @@
+#addin nuget:?package=Cake.Coverlet&version=2.5.4
+#tool dotnet:?package=dotnet-reportgenerator-globaltool&version=5.1.13
+
 var testProjectsRelativePaths = new string[]
 {
     "./Solana.Unity.Gum.Test/Solana.Unity.Gum.Test.csproj",
