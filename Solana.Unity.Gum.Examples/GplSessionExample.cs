@@ -2,12 +2,11 @@
 
 using Solana.Unity.Rpc;
 using Solana.Unity.Wallet;
-using Solana.Unity.Gum.GplSession;
-using Solana.Unity.Gum.GplSession.Program;
 using Solana.Unity.Wallet.Bip39;
 using Solana.Unity.Programs;
 using Solana.Unity.Rpc.Models;
 using Solana.Unity.Gum.GplSession.Accounts;
+using Solana.Unity.Gum.GplSession.Program;
 
 namespace Solana.Unity.Gum.Examples
 {
