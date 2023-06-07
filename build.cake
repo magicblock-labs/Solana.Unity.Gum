@@ -1,7 +1,3 @@
-#module nuget:?package=Cake.DotNetTool.Module&version=0.4.0
-#addin nuget:?package=Cake.Coverlet&version=2.5.4
-#tool dotnet:?package=dotnet-reportgenerator-globaltool&version=4.8.7
-
 var testProjectsRelativePaths = new string[]
 {
     "./Solana.Unity.Gum.Test/Solana.Unity.Gum.Test.csproj",
@@ -12,18 +8,12 @@ var configuration = Argument("configuration", "Release");
 var solutionFolder = "./";
 var artifactsDir = MakeAbsolute(Directory("artifacts"));
 
-var reportTypes = "HtmlInline";
-var coverageFolder = "./code_coverage";
-var coverageFileName = "results.info";
-
-var coverageFilePath = Directory(coverageFolder) + File(coverageFileName);
 var packagesDir = artifactsDir.Combine(Directory("packages"));
 
 
 Task("Clean")
     .Does(() => {
         CleanDirectory(artifactsDir);
-        CleanDirectory(coverageFolder);
     });
 
 Task("Restore")
@@ -46,14 +36,6 @@ Task("Build")
 Task("Test")
     .IsDependentOn("Build")
     .Does(() => {
-
-        var coverletSettings = new CoverletSettings {
-            CollectCoverage = true,
-            CoverletOutputDirectory = coverageFolder,
-            CoverletOutputName = coverageFileName,
-            CoverletOutputFormat = CoverletOutputFormat.lcov
-        };
-
         var testSettings = new DotNetCoreTestSettings
         {
             NoRestore = true,
@@ -62,24 +44,12 @@ Task("Test")
             ArgumentCustomization = args => args.Append($"--logger trx"),
         };
 
-        DotNetCoreTest(testProjectsRelativePaths[0], testSettings, coverletSettings);
+        DotNetCoreTest(testProjectsRelativePaths[0], testSettings);
     });
 
 
-Task("Report")
-    .IsDependentOn("Test")
-    .Does(() =>
-{
-    var reportSettings = new ReportGeneratorSettings
-    {
-        ArgumentCustomization = args => args.Append($"-reportTypes:{reportTypes}")
-    };
-    ReportGenerator(coverageFilePath, Directory(coverageFolder), reportSettings);
-});
-
-
 Task("Publish")
-    .IsDependentOn("Report")
+    .IsDependentOn("Build")
     .Does(() => {
         DotNetCorePublish(solutionFolder, new DotNetCorePublishSettings
         {

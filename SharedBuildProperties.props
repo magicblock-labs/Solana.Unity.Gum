@@ -2,7 +2,7 @@
          xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <Product>Solana.Unity.Gum</Product>
-        <Version>0.0.1</Version>
+        <Version>1.0.0</Version>
         <Copyright>Copyright 2023 &#169; gumhq</Copyright>
         <Authors>gumhq</Authors>
         <PublisherName>gumhq</PublisherName>
@@ -11,7 +11,7 @@
         <LangVersion>latest</LangVersion>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageIcon>icon.png</PackageIcon>
-        <PackageDescription>Solana.Unity.Gum is a .Net integration library for Template.</PackageDescription>
+        <PackageDescription>Solana.Unity.Gum is a library to use Gum primitives in Unity</PackageDescription>
         <PackageTags>solana;gum;unity;sol;net5</PackageTags>
         <PackageReleaseNotes>https://github.com/gumhq/Solana.Unity.Gum/releases</PackageReleaseNotes>
         <RepositoryType>git</RepositoryType>
