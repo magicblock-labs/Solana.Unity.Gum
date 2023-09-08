@@ -66,7 +66,7 @@ namespace Solana.Unity.Gum.GplSession
             /// <summary>
             /// The public key of the GPL Session program.
             /// </summary>
-            public static readonly PublicKey ProgramIdKey = new PublicKey("3ao63wcSRNa76bncC2M3KupNtXBFiDyNbgK52VG7dLaE");
+            public static readonly PublicKey ProgramIdKey = new PublicKey("KeyspM2ssCJbqUhQ4k7sveSiY4WjnYsrXkC8oDbwde5");
             /// <summary>
             /// Creates a new session account.
             /// </summary>
