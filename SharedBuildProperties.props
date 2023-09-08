@@ -1,19 +1,19 @@
 <Project DefaultTargets="Build"
          xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <Product>Solana.Unity.Gum</Product>
+        <Product>Solana.Unity.SessionKeys</Product>
         <Version>1.0.2</Version>
         <Copyright>Copyright 2023 &#169; Magicblock</Copyright>
         <Authors>Magicblock</Authors>
         <PublisherName>Magicblock</PublisherName>
-        <RepositoryUrl>https://github.com/gumhq/Solana.Unity.Gum</RepositoryUrl>
+        <RepositoryUrl>https://github.com/magicblock-labs/gum-program-library</RepositoryUrl>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <LangVersion>latest</LangVersion>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageIcon>icon.png</PackageIcon>
-        <PackageDescription>Solana.Unity.Gum is a library to use Gum primitives in Unity</PackageDescription>
+        <PackageDescription>Solana.Unity.SessionKeys is a library to use Gum primitives in Unity</PackageDescription>
         <PackageTags>solana;gum;unity;sol;net5</PackageTags>
-        <PackageReleaseNotes>https://github.com/magicblock-labs/Solana.Unity.Gum/releases</PackageReleaseNotes>
+        <PackageReleaseNotes>https://github.com/magicblock-labs/gum-program-library/releases</PackageReleaseNotes>
         <RepositoryType>git</RepositoryType>
     </PropertyGroup>
 

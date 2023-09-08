@@ -5,10 +5,10 @@ using Solana.Unity.Wallet;
 using Solana.Unity.Wallet.Bip39;
 using Solana.Unity.Programs;
 using Solana.Unity.Rpc.Models;
-using Solana.Unity.Gum.GplSession.Accounts;
-using Solana.Unity.Gum.GplSession.Program;
+using Solana.Unity.SessionKeys.GplSession.Accounts;
+using Solana.Unity.SessionKeys.GplSession.Program;
 
-namespace Solana.Unity.Gum.Examples
+namespace Solana.Unity.SessionKeys.Examples
 {
     public class GplSessionInitiateTest
     {

@@ -7,8 +7,6 @@
         <TargetFramework>netstandard2.1</TargetFramework>
 
         <IsPackable>true</IsPackable>
-
-        <RootNamespace>Solana.Unity.Gum</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

@@ -8,10 +8,11 @@ using Solana.Unity.Rpc.Core.Http;
 using Solana.Unity.Rpc.Core.Sockets;
 using Solana.Unity.Rpc.Types;
 using Solana.Unity.Wallet;
-using Solana.Unity.Gum.GplSession.Errors;
-using Solana.Unity.Gum.GplSession.Accounts;
-using Solana.Unity.Gum.GplSession.Program;
-namespace Solana.Unity.Gum.GplSession
+using Solana.Unity.SessionKeys.GplSession.Accounts;
+using Solana.Unity.SessionKeys.GplSession.Errors;
+using Solana.Unity.SessionKeys.GplSession.Program;
+
+namespace Solana.Unity.SessionKeys.GplSession
 {
     /// <summary>
     /// Client for interacting with the GPL Session program on the Solana blockchain.

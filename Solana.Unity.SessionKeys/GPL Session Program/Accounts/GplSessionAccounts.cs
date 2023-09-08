@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Solana.Unity.Gum.GplSession.Program;
 using Solana.Unity.Programs.Utilities;
+using Solana.Unity.SessionKeys.GplSession.Program;
 using Solana.Unity.Wallet;
 
-namespace Solana.Unity.Gum.GplSession
+namespace Solana.Unity.SessionKeys.GplSession
 {
     namespace Accounts
     {

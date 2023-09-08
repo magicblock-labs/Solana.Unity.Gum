@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Solana.Unity.Programs.Utilities;
 using Solana.Unity.Wallet;
-namespace Solana.Unity.Gum.GplSession
+namespace Solana.Unity.SessionKeys.GplSession
 {
     namespace Program {
         /// <summary>

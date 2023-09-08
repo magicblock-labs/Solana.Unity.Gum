@@ -3,11 +3,10 @@
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>net6.0</TargetFramework>
-        <RootNamespace>Solana.Unity.Gum.Examples</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Solana.Unity.Gum\Solana.Unity.Gum.csproj" />
+        <ProjectReference Include="..\Solana.Unity.SessionKeys\Solana.Unity.SessionKeys.csproj" />
     </ItemGroup>
 
     <ItemGroup>

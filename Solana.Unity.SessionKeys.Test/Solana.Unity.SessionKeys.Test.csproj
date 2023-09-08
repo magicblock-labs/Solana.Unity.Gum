@@ -22,7 +22,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Solana.Unity.Gum\Solana.Unity.Gum.csproj" />
+        <ProjectReference Include="..\Solana.Unity.SessionKeys\Solana.Unity.SessionKeys.csproj" />
     </ItemGroup>
 
     <ItemGroup>

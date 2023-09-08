@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using Solana.Unity.Programs.Utilities;
 using Solana.Unity.Wallet;
-using Solana.Unity.Gum;
-namespace Solana.Unity.Gum.GplSession
+using Solana.Unity.SessionKeys;
+namespace Solana.Unity.SessionKeys.GplSession
 {
 
     namespace Errors
