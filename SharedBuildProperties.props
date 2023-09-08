@@ -3,9 +3,9 @@
     <PropertyGroup>
         <Product>Solana.Unity.Gum</Product>
         <Version>1.0.2</Version>
-        <Copyright>Copyright 2023 &#169; gumhq</Copyright>
-        <Authors>gumhq</Authors>
-        <PublisherName>gumhq</PublisherName>
+        <Copyright>Copyright 2023 &#169; Magicblock</Copyright>
+        <Authors>Magicblock</Authors>
+        <PublisherName>Magicblock</PublisherName>
         <RepositoryUrl>https://github.com/gumhq/Solana.Unity.Gum</RepositoryUrl>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <LangVersion>latest</LangVersion>
@@ -13,7 +13,7 @@
         <PackageIcon>icon.png</PackageIcon>
         <PackageDescription>Solana.Unity.Gum is a library to use Gum primitives in Unity</PackageDescription>
         <PackageTags>solana;gum;unity;sol;net5</PackageTags>
-        <PackageReleaseNotes>https://github.com/gumhq/Solana.Unity.Gum/releases</PackageReleaseNotes>
+        <PackageReleaseNotes>https://github.com/magicblock-labs/Solana.Unity.Gum/releases</PackageReleaseNotes>
         <RepositoryType>git</RepositoryType>
     </PropertyGroup>
 
