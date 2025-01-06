@@ -86,13 +86,14 @@ namespace Solana.Unity.SessionKeys.GplSession
         /// <param name="accounts">The accounts involved in the transaction.</param>
         /// <param name="topUp">Whether to top up the session account.</param>
         /// <param name="validUntil">The timestamp until which the session is valid.</param>
+        /// <param name="topUpLamports">The lamports to topup.</param>
         /// <param name="feePayer">The public key of the fee payer.</param>
         /// <param name="signingCallback">The signing callback function.</param>
         /// <param name="programId">The program ID.</param>
         /// <returns>A request result containing the transaction signature.</returns>
-        public async Task<RequestResult<string>> SendCreateSessionAsync(CreateSessionAccounts accounts, bool? topUp, long? validUntil, PublicKey feePayer, Func<byte[], PublicKey, byte[]> signingCallback, PublicKey programId)
+        public async Task<RequestResult<string>> SendCreateSessionAsync(CreateSessionAccounts accounts, bool? topUp, long? validUntil, ulong? topUpLamports, PublicKey feePayer, Func<byte[], PublicKey, byte[]> signingCallback, PublicKey programId)
         {
-            Solana.Unity.Rpc.Models.TransactionInstruction instr = Program.GplSessionProgram.CreateSession(accounts, topUp, validUntil, programId);
+            Solana.Unity.Rpc.Models.TransactionInstruction instr = Program.GplSessionProgram.CreateSession(accounts, topUp, validUntil, topUpLamports, programId);
             return await SignAndSendTransaction(instr, feePayer, signingCallback);
         }
 

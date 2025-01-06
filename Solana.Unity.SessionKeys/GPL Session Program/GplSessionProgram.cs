@@ -73,13 +73,12 @@ namespace Solana.Unity.SessionKeys.GplSession
             /// <param name="accounts">The accounts used to create the session.</param>
             /// <param name="topUp">Whether to top up the session account.</param>
             /// <param name="validUntil">The time until the session is valid.</param>
+            /// <param name="lamports">The lamports trasferred for the topup.</param>
             /// <param name="programId">The program ID of the session program.</param>
             /// <returns>A transaction instruction to create the session account.</returns>
-            public static Solana.Unity.Rpc.Models.TransactionInstruction CreateSession(CreateSessionAccounts accounts, bool? topUp = null, long? validUntil = null, PublicKey programId = null!)
-
+            public static Solana.Unity.Rpc.Models.TransactionInstruction CreateSession(CreateSessionAccounts accounts, bool? topUp = null, long? validUntil = null, ulong? lamports = null, PublicKey programId = null)
             {
                 programId ??= ProgramIdKey;
-
                 List<Solana.Unity.Rpc.Models.AccountMeta> keys = new()
                 {Solana.Unity.Rpc.Models.AccountMeta.Writable(accounts.SessionToken, false), Solana.Unity.Rpc.Models.AccountMeta.Writable(accounts.SessionSigner, true), Solana.Unity.Rpc.Models.AccountMeta.Writable(accounts.Authority, true), Solana.Unity.Rpc.Models.AccountMeta.ReadOnly(accounts.TargetProgram, false), Solana.Unity.Rpc.Models.AccountMeta.ReadOnly(accounts.SystemProgram, false)};
                 byte[] _data = new byte[1200];
@@ -112,9 +111,22 @@ namespace Solana.Unity.SessionKeys.GplSession
                     offset += 1;
                 }
 
+                if (lamports != null)
+                {
+                    _data.WriteU8(1, offset);
+                    offset += 1;
+                    _data.WriteU64(lamports.Value, offset);
+                    offset += 8;
+                }
+                else
+                {
+                    _data.WriteU8(0, offset);
+                    offset += 1;
+                }
+
                 byte[] resultData = new byte[offset];
                 Array.Copy(_data, resultData, offset);
-                return new Solana.Unity.Rpc.Models.TransactionInstruction { Keys = keys, ProgramId = programId.KeyBytes, Data = resultData };
+                return new Solana.Unity.Rpc.Models.TransactionInstruction{Keys = keys, ProgramId = programId.KeyBytes, Data = resultData};
             }
 
             /// <summary>
